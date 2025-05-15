@@ -1,0 +1,33 @@
+{% extends 'base_owner.html' %}
+
+{% block title %}Registered Customers{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Registered Customers</h2>
+    {% if customers %}
+        <table class="customers-table">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.customer_id }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.phone }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No customers registered yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

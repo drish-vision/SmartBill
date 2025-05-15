@@ -1,0 +1,35 @@
+{% extends 'base_owner.html' %}
+
+{% block title %}Register Customer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Register New Customer</h2>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    
+    <form action="{{ url_for('register_customer') }}" method="POST" class="form">
+        <label for="customer_id">Customer ID:</label>
+        <input type="text" name="customer_id" id="customer_id" required autocomplete="off">
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required autocomplete="name">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required autocomplete="email">
+
+        <label for="phone">Phone:</label>
+        <input type="tel" name="phone" id="phone" required autocomplete="tel">
+
+        <button type="submit" class="btn">Register</button>
+    </form>
+</div>
+{% endblock %}

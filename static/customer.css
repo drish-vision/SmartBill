@@ -1,0 +1,155 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #121212;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+/* Navbar */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.dashboard-card p {
+    color: #bbbbbb;
+}
+
+/* Table for Invoices */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #333;
+    color: #ddd;
+}
+
+table th {
+    background-color: #333;
+}
+
+table td {
+    background-color: #222;
+}
+
+/* Form Input */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #e65c00;
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    color: #888;
+}
+
+/* Logout Button */
+.logout-btn {
+    background-color: #f44336;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}

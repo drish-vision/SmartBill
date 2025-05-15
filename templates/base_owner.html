@@ -1,0 +1,28 @@
+<!-- templates/base_owner.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Owner Dashboard{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='owner.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Owner Panel</h2>
+    <ul>
+      <li><a href="/owner/dashboard">Overview</a></li>
+      <li><a href="/owner/register-customer">Register Customer</a></li>
+      <li><a href="/owner/customers">Registered Customers</a></li>
+      <li><a href="/owner/sales-report">Sales Report</a></li>
+      <li><a href="/owner/products">Product Management</a></li>
+      <li><a href="/owner/offers">Offers Management</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

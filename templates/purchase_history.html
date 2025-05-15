@@ -1,0 +1,21 @@
+{% extends "base_customer.html" %}
+{% block content %}
+<h1>Purchase History</h1>
+<div class="filters">
+  <button onclick="location.href='/customer/purchase-history/week'">Last Week</button>
+  <button onclick="location.href='/customer/purchase-history/year'">Last Year</button>
+  <button onclick="location.href='/customer/purchase-history/thisyear'">This Year</button>
+</div>
+<div class="purchase-list">
+  {% for item in purchases %}
+    <div class="purchase-item">
+      <img src="{{ item.image }}" alt="Product">
+      <div>
+        <h4>{{ item.name }}</h4>
+        <p>{{ item.description }}</p>
+        <strong>₹{{ item.amount }}</strong>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

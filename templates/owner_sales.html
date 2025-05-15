@@ -1,0 +1,55 @@
+{% extends "base_owner.html" %}
+{% block content %}
+<div class="container">
+  <h1>📊 Sales Report</h1>
+
+  <div class="chart-container" style="position: relative; height: 50vh; width: 80vw;">
+    <canvas id="brandChart"></canvas>
+  </div>
+
+  <!-- Chart.js (Make sure this script is included) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    const brandLabels = {{ brand_names | tojson | safe }};
+    const brandSales = {{ brand_sales | tojson | safe }};
+
+    const ctx = document.getElementById('brandChart').getContext('2d');
+    const brandChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: brandLabels,
+        datasets: [{
+          label: 'Sales Distribution',
+          data: brandSales,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(83, 102, 255, 0.6)',
+            'rgba(199, 199, 199, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top Selling Brands',
+            font: {
+              size: 18
+            }
+          },
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  </script>
+</div>
+{% endblock %}

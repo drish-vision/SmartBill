@@ -1,0 +1,6 @@
+Flask
+Flask-MySQLdb
+Flask-SQLAlchemy
+PyMySQL
+Flask-WTF
+Flask-Bcrypt

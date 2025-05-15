@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartBill - Shop Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to SmartBill</h1>
+        <p class="tagline">A reliable billing companion</p>
+        <p class="tagline">Fast and smooth billing</p>
+    </div>
+
+    <div class="login-selection">
+        <a href="/shop_owner_login" class="btn">Shop Owner Login / Register</a>
+        <a href="/customer_login" class="btn">Customer Login</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Owner Dashboard</title>
+  <link rel="stylesheet" href="/static/owner.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Owner Panel</h2>
+    <ul>
+      <li><a href="/owner_dashboard">Dashboard Overview</a></li>
+      <li><a href="/register_customer">Register Customer</a></li>
+      <li><a href="/registered_customers">Registered Customers</a></li>
+      <li><a href="/sales_report">Sales Report</a></li>
+      <li><a href="/product_management">Product Management</a></li>
+      <li><a href="/offers_management">Offers Management</a></li>
+      <li><a href="/invoices">Invoice Records</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Welcome, {{ session['owner_name'] }}</h1>
+
+    <section class="sales-section">
+      <h3>Top-Selling Product</h3>
+      <img src="/static/images/top_product.jpg" alt="Top Product" class="top-product-img" />
+      <p>Brand: XYZ | Units Sold: 150 | Revenue: ₹45,000</p>
+    </section>
+
+    <div class="chart-container">
+      <h3>Sales Distribution by Brand</h3>
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('pieChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Brand A', 'Brand B', 'Brand C'],
+        datasets: [
+          {
+            label: 'Sales',
+            data: [300, 150, 100],
+            backgroundColor: ['#ff6384', '#36a2eb', '#cc65fe'],
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'right' },
+          tooltip: { enabled: true },
+        },
+      },
+    });
+  </script>
+</body>
+</html>

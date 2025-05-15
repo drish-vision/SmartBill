@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='customer.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Customer Panel</h2>
+        <ul>
+            <li><a href="{{ url_for('customer_dashboard') }}">Dashboard Overview</a></li>
+            <li><a href="{{ url_for('purchase_history') }}">Purchase History</a></li>
+            <li><a href="{{ url_for('invoices_customer') }}">Invoices</a></li>
+            <li><a href="{{ url_for('exchange_offers') }}">Exchange Offers</a></li>
+            <li><a href="{{ url_for('customer_offers') }}">Available Offers</a></li>
+            <li><a href="{{ url_for('profile_settings') }}">Profile Settings</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Welcome, {{ customer_name }}</h1>
+        <p>Here’s a summary of your recent activity. Explore your history, invoices, and more from the menu.</p>
+    </div>
+</body>
+</html>

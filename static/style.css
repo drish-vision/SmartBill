@@ -1,0 +1,73 @@
+/* static/style.css — SmartBill Dark Mode + Green */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d1117;
+    color: #ffffff;
+}
+
+.form-container {
+    max-width: 420px;
+    margin: 60px auto;
+    background-color: #161b22;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.05);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #22c55e;
+    margin-bottom: 20px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #cbdaec;
+    background-color: #0d1117;
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.form-container input:focus {
+    border: 1px solid #22c55e;
+    outline: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #16a34a;
+}
+
+.form-container a {
+    color: #4ade80;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .form-container {
+        margin: 30px 20px;
+        padding: 20px;
+    }
+}

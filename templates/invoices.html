@@ -1,0 +1,33 @@
+{% extends "base_customer.html" %}
+
+{% block content %}
+
+<div class="invoices-container"> <h1>My Invoices</h1>
+{% if invoices %}
+<table class="invoice-table">
+<thead>
+<tr>
+<th>Invoice ID</th>
+<th>Date</th>
+<th>Total Amount</th>
+<th>Status</th>
+<th>Download</th>
+</tr>
+</thead>
+<tbody>
+{% for invoice in invoices %}
+<tr>
+<td>{{ invoice.invoice_id }}</td>
+<td>{{ invoice.date }}</td>
+<td>₹{{ invoice.total_amount }}</td>
+<td>{{ invoice.status }}</td>
+<td><a href="{{ url_for('download_invoice', invoice_id=invoice.invoice_id) }}">PDF</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p>No invoices found.</p>
+{% endif %}
+
+</div> {% endblock %}

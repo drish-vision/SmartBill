@@ -1,0 +1,12 @@
+{% extends "base_customer.html" %}
+{% block content %}
+<h1>Exchange Offers</h1>
+{% for offer in exchange_offers %}
+<div class="exchange-offer">
+  <h3>{{ offer.product_name }}</h3>
+  <p>Specs: {{ offer.specs }}</p>
+  <p>Exchange Amount: ₹{{ offer.amount }}</p>
+  <p>Benefits: {{ offer.benefits }}</p>
+</div>
+{% endfor %}
+{% endblock %}
